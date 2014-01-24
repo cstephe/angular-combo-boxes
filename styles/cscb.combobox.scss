@@ -1,4 +1,6 @@
-@import "font-awesome/scss/font-awesome.scss";
+$fa-font-path: "font-awesome/fonts" !default;
+@import "font-awesome/scss/font-awesome";
+
 @font-face {
     font-family: FontAwesome;
     src: url("font-awesome/fonts/fontawesome-webfont.ttf");
