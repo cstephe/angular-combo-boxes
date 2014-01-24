@@ -13,7 +13,7 @@
                 comboList : '='
             }
         };
-        var linkFn = function(scope){
+        var linkFn = function(scope, el){
             var onClickAnyWhereElse = function(event){
                 var originalTargetScope = angular.element(event.originalEvent.srcElement).scope() || {};
                 if(originalTargetScope.$id !== scope.$id)
@@ -23,6 +23,7 @@
                     $document.unbind('click', onClickAnyWhereElse);
                 }
             };
+            scope.isRequired = el.attr("required") === "required";
             scope.popUp = function(){
                 scope.popupVisible = !scope.popupVisible;
                 // Close all instances when user clicks elsewhere
