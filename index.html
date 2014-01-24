@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Combo Boxes Demo</title>
+    <meta name="description" content="Demo Page to test and Demo Comboboxes">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="styles/cscb.combobox.css">
+</head>
+<body ng-app="cscb.combobox" ng-controller="demoController">
+
+<div style="width:600px;">
+    <cscb-text-select-combo combo-data="textData" combo-list="listOfStuff"></cscb-text-select-combo>
+</div>
+<button ng-click="onButtonPressed()"></button>
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/json3/lib/json3.js"></script>
+<script src="lib/underscore/underscore.js"></script>
+<script src="demo.js"></script>
+<script src="scripts/cscb.combobox.js"></script>
+</body>

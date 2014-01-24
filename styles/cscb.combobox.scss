@@ -1,0 +1,82 @@
+.cscb-select-combo-wrapper {
+    font-family: Arial;
+    font-size: 12px;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #CCC;
+
+    .cscb-select-control-container{
+        display:table;
+
+        & > div{
+            display:table-row;
+            & > div:first-child{
+                width: 100%;
+                padding-right: 25px;
+            }
+            & > div{
+                display:table-cell;
+            }
+        }
+        input{
+            margin-right: 0;
+            border: none;
+            width:100%;
+            padding-right: 19px;
+        }
+        .cscb-select-image {
+            background-image: url('images/dropdown.gif');
+            height: 21px;
+            width: 19px;
+            cursor: pointer;
+            vertical-align: bottom;
+            margin-bottom: 0px;
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    div.cscb-select-popup {
+        position: absolute;
+        top: 22px;
+        border-left: 1px solid #c0c0c0;
+        border-right: 1px solid #c0c0c0;
+        border-bottom: 1px solid #c0c0c0;
+        z-index: 99999999;
+        background-color: white;
+        padding-top: 2px;
+        padding-left:2px;
+        width: 100%;
+    }
+
+    div.cscb-select-list {
+        overflow: auto;
+        margin-bottom: 1px;
+    }
+
+    .cscb-select-popup ul {
+        cursor: pointer;
+        padding: 3px 0px 3px 0px;
+        margin: 0;
+        text-align: left;
+        list-style: none;
+        width: 100%;
+
+        li:hover {
+            background-color: #f0f0f0;
+        }
+    }
+
+    .cscb-select-popup-popup li {
+        padding-left: 3px;
+        margin-right: 3px;
+        margin-left: 3px;
+        white-space: nowrap;
+    }
+}
+
+
+
+

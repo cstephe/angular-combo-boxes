@@ -1,0 +1,17 @@
+<div class="cscb-select-combo-wrapper">
+    <div class="cscb-select-control-container">
+        <div class="cscb-select-control-container-row">
+            <div><input type="text" ng-model="comboData"></div>
+            <div class="cscb-select-image" ng-click="popUp()"></div>
+        </div>
+    </div>
+    <div class="cscb-select-popup" ng-show="popupVisible">
+        <div class="cscb-select-list">
+            <ul>
+                <li ng-repeat="item in comboList" ng-click="selectItem(item)">
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
