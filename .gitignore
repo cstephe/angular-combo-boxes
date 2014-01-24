@@ -1,0 +1,12 @@
+node_modules
+dist
+.tmp
+.sass-cache
+lib
+.project
+coverage
+*.log
+.idea
+*test*.html
+coverage
+test-results.xml
