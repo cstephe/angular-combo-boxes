@@ -15,7 +15,8 @@
         };
         var linkFn = function(scope, el){
             var onClickAnyWhereElse = function(event){
-                var originalTargetScope = angular.element(event.originalEvent.srcElement).scope() || {};
+                var sourceElement = event.srcElement || event.originalEvent.srcElement;
+                var originalTargetScope = angular.element(sourceElement).scope() || {};
                 if(originalTargetScope.$id !== scope.$id)
                 {
                     scope.popupVisible=false;

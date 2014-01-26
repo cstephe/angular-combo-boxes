@@ -13,6 +13,7 @@ $fa-font-path: "font-awesome/fonts" !default;
     display: inline-block;
     width: 100%;
     border: 1px solid #CCC;
+    border-radius: 2px;
     //XXX Used to offset for the pop I think
     margin-bottom: -7px;
     .cscb-select-control-container{
@@ -37,13 +38,12 @@ $fa-font-path: "font-awesome/fonts" !default;
         .cscb-select-image {
             @extend .fa-caret-down;
             background: linear-gradient(to bottom,
-                rgba(237,237,237,0.65) 0%,
-                rgba(183,183,183,0.78) 53%,
-                rgba(145,145,145,0.9) 100%);
+                rgba(237, 237, 237, 0.65) 0%,
+                rgba(201, 201, 201, 0.78) 53%);
             font-family: FontAwesome;
             height: 100%;
             width: 19px;
-            line-height: 2em;
+            line-height: 1.7em;
             cursor: pointer;
             margin-bottom: 0px;
             position: absolute;
@@ -82,12 +82,13 @@ $fa-font-path: "font-awesome/fonts" !default;
         li:hover {
             background-color: #f0f0f0;
         }
-    }
-
-    .cscb-select-popup-popup li {
-        padding-left: 3px;
-        margin-right: 3px;
-        margin-left: 3px;
-        white-space: nowrap;
+        li {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-left: 3px;
+            margin-right: 3px;
+            margin-left: 3px;
+            white-space: nowrap;
+        }
     }
 }

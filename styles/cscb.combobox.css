@@ -1339,6 +1339,7 @@
   display: inline-block;
   width: 100%;
   border: 1px solid #CCC;
+  border-radius: 2px;
   margin-bottom: -7px; }
   .cscb-select-combo-wrapper .cscb-select-control-container {
     display: table; }
@@ -1355,11 +1356,11 @@
       width: 100%;
       padding-right: 19px; }
     .cscb-select-combo-wrapper .cscb-select-control-container .cscb-select-image {
-      background: linear-gradient(to bottom, rgba(237, 237, 237, 0.65) 0%, rgba(183, 183, 183, 0.78) 53%, rgba(145, 145, 145, 0.9) 100%);
+      background: linear-gradient(to bottom, rgba(237, 237, 237, 0.65) 0%, rgba(201, 201, 201, 0.78) 53%);
       font-family: FontAwesome;
       height: 100%;
       width: 19px;
-      line-height: 2em;
+      line-height: 1.7em;
       cursor: pointer;
       margin-bottom: 0px;
       position: absolute;
@@ -1388,8 +1389,10 @@
     width: 100%; }
     .cscb-select-combo-wrapper .cscb-select-popup ul li:hover {
       background-color: #f0f0f0; }
-  .cscb-select-combo-wrapper .cscb-select-popup-popup li {
-    padding-left: 3px;
-    margin-right: 3px;
-    margin-left: 3px;
-    white-space: nowrap; }
+    .cscb-select-combo-wrapper .cscb-select-popup ul li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 3px;
+      margin-right: 3px;
+      margin-left: 3px;
+      white-space: nowrap; }
