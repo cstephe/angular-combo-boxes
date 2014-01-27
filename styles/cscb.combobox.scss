@@ -13,27 +13,19 @@ $fa-font-path: "font-awesome/fonts" !default;
     display: inline-block;
     width: 100%;
     border: 1px solid #CCC;
-    border-radius: 2px;
+    border-radius: 4px;
     //XXX Used to offset for the pop I think
     margin-bottom: -7px;
     .cscb-select-control-container{
-        display:table;
-
         & > div{
-            display:table-row;
             & > div:first-child{
-                width: 100%;
                 padding-right: 25px;
-            }
-            & > div{
-                display:table-cell;
             }
         }
         input{
             margin-right: 0;
             border: none;
             width:100%;
-            padding-right: 19px;
         }
         .cscb-select-image {
             @extend .fa-caret-down;
@@ -48,6 +40,7 @@ $fa-font-path: "font-awesome/fonts" !default;
             margin-bottom: 0px;
             position: absolute;
             right: 0;
+            top: 0;
             text-align: center;
         }
     }
