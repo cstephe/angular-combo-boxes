@@ -25,6 +25,7 @@
                 }
             };
             scope.isRequired = el.attr("required") === "required";
+            scope.type = el.attr("type") || "text";
             scope.popUp = function(){
                 scope.popupVisible = !scope.popupVisible;
                 // Close all instances when user clicks elsewhere
