@@ -1,0 +1,58 @@
+.cscb-select-combo-wrapper {
+  font-size: 12px;
+  background-color: #FFF;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  margin-bottom: -7px; }
+  .cscb-select-combo-wrapper .cscb-select-control-container > div > div:first-child {
+    padding-right: 25px; }
+  .cscb-select-combo-wrapper .cscb-select-control-container input {
+    margin-right: 0;
+    border: none;
+    width: 100%; }
+  .cscb-select-combo-wrapper .cscb-select-control-container .cscb-select-image {
+    background: linear-gradient(to bottom, rgba(237, 237, 237, 0.65) 0%, rgba(201, 201, 201, 0.78) 53%);
+    font-family: FontAwesome;
+    height: 100%;
+    width: 19px;
+    line-height: 1.7em;
+    cursor: pointer;
+    margin-bottom: 0px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center; }
+  .cscb-select-combo-wrapper div.cscb-select-popup {
+    position: absolute;
+    top: 22px;
+    border-left: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    z-index: 99999999;
+    background-color: white;
+    padding-top: 2px;
+    padding-left: 2px;
+    width: 100%; }
+  .cscb-select-combo-wrapper div.cscb-select-list {
+    overflow: auto;
+    margin-bottom: 1px; }
+  .cscb-select-combo-wrapper .cscb-select-popup ul {
+    cursor: pointer;
+    padding: 3px 0px 3px 0px;
+    margin: 0;
+    text-align: left;
+    list-style: none;
+    width: 100%; }
+    .cscb-select-combo-wrapper .cscb-select-popup ul li:hover {
+      background-color: #f0f0f0; }
+    .cscb-select-combo-wrapper .cscb-select-popup ul li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 3px;
+      margin-right: 3px;
+      margin-left: 3px;
+      white-space: nowrap; }

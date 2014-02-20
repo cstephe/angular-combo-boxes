@@ -1,66 +1,51 @@
 //TODO break this up into file per each control group
 
 'use strict';
-(function(window, angular, undefined) {
-    angular.module('cscb.comboboxes', [])
-.directive('cscbTextSelectCombo', ['$document' ,'_', 'CSCBService',
-    function($document, _, CSCBService) {
-        var settings = CSCBService.getSettings();
+(function (window, angular, undefined) {
+angular.module('cscb.comboboxes', [])
+.directive('cscbTextSelectCombo', ['$document' , '_',
+    function ($document, _) {
         var directive = {
-            restrict : 'E',
-            scope : {
-                comboData : '=',
-                comboList : '='
+            restrict: 'E',
+            scope: {
+                comboData: '=',
+                comboList: '='
             }
         };
-        var linkFn = function(scope, el){
-            var onClickAnyWhereElse = function(event){
+        var linkFn = function (scope, el) {
+            var onClickAnyWhereElse = function (event) {
                 var sourceElement = event.srcElement || event.originalEvent.srcElement;
-                var originalTargetScope = angular.element(sourceElement).scope() || {};
-                if(originalTargetScope.$id !== scope.$id)
-                {
-                    scope.popupVisible=false;
+                if (sourceElement.className !== "cscb-select-image") {
+                    scope.popupVisible = false;
                     scope.$apply(scope.popupVisible);
                     $document.unbind('click', onClickAnyWhereElse);
                 }
             };
             scope.isRequired = el.attr("required") === "required";
             scope.type = el.attr("type") || "text";
-            scope.popUp = function(){
+            scope.popUp = function () {
                 scope.popupVisible = !scope.popupVisible;
                 // Close all instances when user clicks elsewhere
                 $document.bind('click', onClickAnyWhereElse);
             };
-            scope.selectItem = function(item){
+            scope.selectItem = function (item) {
                 scope.comboData = item;
                 scope.popupVisible = false;
             };
-            scope.popupVisible=false;
+            scope.popupVisible = false;
         };
         directive.link = linkFn;
-        directive.templateUrl = settings.templatePath + "text-select-combo.html";
+        directive.template = '<div class="cscb-select-combo-wrapper">' +
+            '<div class="cscb-select-control-container">' +
+            '<div class="cscb-select-control-container-row">' +
+            '<div><input ng-required="isRequired" type="{{type}}" class="form-control" ng-model="comboData"></div>' +
+            '<div class="cscb-select-image" ng-click="popUp()"></div> </div> </div>' +
+            '<div class="cscb-select-popup" ng-show="popupVisible"> <div class="cscb-select-list">' +
+            '<ul> <li ng-repeat="item in comboList" ng-click="selectItem(item)"> {{item}} </li> </ul>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
         return directive;
-}])// Service to allow host pages to change settings for all instances (in their module.run function)
-        .factory('CSCBService', function () {
-
-            var defaultSettings = {
-                "templatePath": "templates"
-            };
-
-            return {
-                getSettings: function () {
-                    // Add trailing "/" to template path if not present
-                    var len = defaultSettings.templatePath.length;
-                    if (len > 0 && defaultSettings.templatePath.substr(len - 1, 1) !== "/") {
-                        defaultSettings.templatePath += "/";
-                    }
-                    return angular.copy(defaultSettings);
-                },
-                updateSetting: function (settingName, value) {
-                    if (defaultSettings.hasOwnProperty(settingName)) {
-                        defaultSettings[settingName] = value;
-                    }
-                }
-            };
-        });
+    }
+])
 })(window, window.angular);
